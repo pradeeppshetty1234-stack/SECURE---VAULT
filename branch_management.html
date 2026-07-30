@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="common.css">
+ 
+    <link rel="stylesheet" href="branch_management.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+   <aside class="sidebar" id="sidebar">
+
+    <div>
+
+        <div class="logo">
+
+           
+<img src="logo.png" alt="Secure Approval Vault Logo">
+
+            <h2>Secure Approval Vault</h2>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+             <li onclick="location.href='myvault.html'">
+
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>My Vault</span>
+
+            </li>
+            <li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+            <li onclick="location.href='upload.html'">
+
+                <i class="fa-solid fa-upload"></i>
+
+                <span>Upload File</span>
+
+            </li>
+
+            <li onclick="location.href='approval.html'">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <span>Approval Requests</span>
+
+            </li>
+             <li class="active">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+            <li onclick="location.href='activity.html'">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Activity Logs</span>
+
+            </li>
+
+            <li onclick="location.href='security.html'">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Security</span>
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </li>
+
+            <li class="logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="storage">
+
+        <h3>Storage</h3>
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <p>6.8 GB of 10 GB Used</p>
+
+    </div>
+
+</aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <h1>Branch Management</h1>
+
+            <div class="top-right">
+
+                <div class="search-box">
+
+                    <input type="text"
+                    placeholder="Search Branch...">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+                <div class="branch-selector">
+
+    <label>Current Branch</label>
+
+    <select id="branchSelect">
+
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hubli">Hubli</option>
+        <option value="Mysore">Mysore</option>
+        <option value="Mangalore">Mangalore</option>
+
+    </select>
+
+</div>
+
+                <div class="notification">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+                <div class="profile">
+
+                    <img src="profile.png" alt="Profile">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Page Header -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h2>Manage Company Branches</h2>
+
+                <p>Create, edit and manage all organization branches.</p>
+
+            </div>
+
+            <button class="add-branch-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Branch
+
+            </button>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="card">
+
+                <i class="fa-solid fa-building"></i>
+
+                <div>
+
+                    <h3>Total Branches</h3>
+
+                    <h1>8</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+
+                    <h3>Total Users</h3>
+
+                    <h1>152</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+
+                    <h3>Active Branches</h3>
+
+                    <h1>7</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+                <div>
+
+                    <h3>Inactive Branches</h3>
+
+                    <h1>1</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+                <!-- Branch Table -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Branch Name</th>
+
+                        <th>Branch Code</th>
+
+                        <th>Manager</th>
+
+                        <th>Total Users</th>
+
+                        <th>Status</th>
+
+                        <th>Last Updated</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Bangalore</td>
+
+                        <td>BLR001</td>
+
+                        <td>Rahul Sharma</td>
+
+                        <td>42</td>
+
+                        <td><span class="status active">Active</span></td>
+
+                        <td>Today</td>
+
+                        <td>
+
+                            <button class="view-btn">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Hubli</td>
+
+                        <td>HBL002</td>
+
+                        <td>Priya Patil</td>
+
+                        <td>28</td>
+
+                        <td><span class="status active">Active</span></td>
+
+                        <td>Yesterday</td>
+
+                        <td>
+
+                            <button class="view-btn">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Mysore</td>
+
+                        <td>MYS003</td>
+
+                        <td>Amit Kumar</td>
+
+                        <td>17</td>
+
+                        <td><span class="status inactive">Inactive</span></td>
+
+                        <td>2 Days Ago</td>
+
+                        <td>
+
+                            <button class="view-btn">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Mangalore</td>
+
+                        <td>MNG004</td>
+
+                        <td>Sneha Rao</td>
+
+                        <td>34</td>
+
+                        <td><span class="status active">Active</span></td>
+
+                        <td>Today</td>
+
+                        <td>
+
+                            <button class="view-btn">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                            <button class="edit-btn">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+            <!-- ================= Add / Edit Branch Modal ================= -->
+
+    <div class="modal" id="branchModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add New Branch</h2>
+
+                <span class="close">&times;</span>
+
+            </div>
+
+            <form id="branchForm">
+
+                <div class="input-group">
+
+                    <label>Branch Name</label>
+
+                    <input type="text" placeholder="Enter Branch Name" required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Branch Code</label>
+
+                    <input type="text" placeholder="Example: BLR001" required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Branch Address</label>
+
+                    <textarea rows="3"
+                    placeholder="Enter Branch Address"></textarea>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Branch Manager</label>
+
+                    <input type="text" placeholder="Manager Name">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Manager Email</label>
+
+                    <input type="email"
+                    placeholder="manager@company.com">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Phone Number</label>
+
+                    <input type="tel"
+                    placeholder="+91 XXXXXXXXXX">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Status</label>
+
+                    <select>
+
+                        <option>Active</option>
+
+                        <option>Inactive</option>
+
+                    </select>
+
+                </div>
+
+                <div class="modal-buttons">
+
+                    <button type="button" class="cancel-btn">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit" class="save-btn">
+
+                        Save Branch
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+
+<script src="branch_management.js"></script>
+
+</body>
+
+</html>

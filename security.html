@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security | Secure Approval Vault</title>
+
+    <link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="security.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+<img src="logo.png" alt="Secure Approval Vault Logo">
+
+
+<h2>Secure Approval Vault</h2>
+
+</div>
+
+<ul>
+
+<li onclick="location.href='dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</li>
+
+<li onclick="location.href='myvault.html'">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<span>My Vault</span>
+
+</li>
+<li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+
+<li onclick="location.href='upload.html'">
+
+<i class="fa-solid fa-upload"></i>
+
+<span>Upload File</span>
+
+</li>
+
+<li onclick="location.href='approval.html'">
+
+<i class="fa-solid fa-user-check"></i>
+
+<span>Approval Requests</span>
+
+</li>
+ <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+
+<li onclick="location.href='activity.html'">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>Activity Logs</span>
+
+</li>
+
+<li class="active">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Security</span>
+
+</li>
+
+<li onclick="location.href='settings.html'">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</li>
+
+<li class="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</li>
+
+</ul>
+
+<div class="storage">
+
+<h3>Storage</h3>
+
+<div class="progress">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<p>68 GB of 100 GB Used</p>
+
+</div>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text" placeholder="Search Security...">
+
+</div>
+
+<div class="top-right">
+
+<div class="notification">
+
+<i class="fa-solid fa-bell"></i>
+
+<span class="count">2</span>
+
+</div>
+
+<div class="profile">
+
+<img src="profile.png">
+
+<div>
+
+<h4>Pradeep</h4>
+
+<small>Administrator</small>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+<h1>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Security Center
+
+</h1>
+
+<p>
+
+Monitor your account security, manage authentication and protect your vault.
+
+</p>
+
+</section>
+
+<!-- ================= SECURITY OVERVIEW ================= -->
+
+<section class="security-cards">
+
+<div class="card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-shield"></i>
+
+</div>
+
+<h2>98%</h2>
+
+<p>Security Score</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-lock"></i>
+
+</div>
+
+<h2>AES-256</h2>
+
+<p>Encryption</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-user-clock"></i>
+
+</div>
+
+<h2>2</h2>
+
+<p>Active Sessions</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon red">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<h2>0</h2>
+
+<p>Failed Attempts</p>
+
+</div>
+
+</section>
+
+<!-- ================= VAULT PROTECTION ================= -->
+
+<section class="vault-status">
+
+<div class="vault-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h2>Vault Protected</h2>
+
+<h3>AES-256 Encryption Enabled</h3>
+
+<p>
+
+Your files are encrypted and protected using enterprise-grade security.
+
+</p>
+
+<span class="status">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Secure
+
+</span>
+
+</div>
+
+</section>
+<!-- ================= CHANGE PASSWORD ================= -->
+
+<section class="security-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-key"></i>
+
+Change Password
+
+</h2>
+
+</div>
+
+<form class="password-form">
+
+<div class="input-group">
+
+<label>Current Password</label>
+
+<input type="password"
+placeholder="Enter current password">
+
+</div>
+
+<div class="input-group">
+
+<label>New Password</label>
+
+<input type="password"
+placeholder="Enter new password">
+
+</div>
+
+<div class="input-group">
+
+<label>Confirm Password</label>
+
+<input type="password"
+placeholder="Confirm new password">
+
+</div>
+
+<div class="strength">
+
+<div class="strength-title">
+
+Password Strength
+
+<span id="strengthText">
+
+Strong
+
+</span>
+
+</div>
+
+<div class="strength-bar">
+
+<div class="strength-fill"></div>
+
+</div>
+
+</div>
+
+<button class="update-btn" type="button">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Update Password
+
+</button>
+
+</form>
+
+</div>
+
+
+<!-- ================= TWO FACTOR ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+Two-Factor Authentication
+
+</h2>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Authenticator App</h3>
+
+<p>
+
+Protect your account with an extra verification step.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Email Verification</h3>
+
+<p>
+
+Receive a verification code through email.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="setting-item">
+
+<div>
+
+<h3>SMS Verification</h3>
+
+<p>
+
+Receive one-time passwords via mobile.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ================= SECURITY EVENTS ================= -->
+
+<section class="security-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Recent Security Events
+
+</h2>
+
+</div>
+
+<ul class="security-events">
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+<div>
+
+<h3>Successful Login</h3>
+
+<p>Today • 10:24 AM • Chrome • Dharwad</p>
+
+</div>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-key"></i>
+
+<div>
+
+<h3>Password Changed</h3>
+
+<p>Yesterday • 8:15 PM</p>
+
+</div>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-lock"></i>
+
+<div>
+
+<h3>Vault Encrypted</h3>
+
+<p>Yesterday • AES-256 Protection Enabled</p>
+
+</div>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-user-check"></i>
+
+<div>
+
+<h3>Approval Granted</h3>
+
+<p>Research.pdf approved successfully.</p>
+
+</div>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<div>
+
+<h3>No Threats Detected</h3>
+
+<p>Your account is currently secure.</p>
+
+</div>
+
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ================= SECURITY RECOMMENDATIONS ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-lightbulb"></i>
+
+Security Recommendations
+
+</h2>
+
+</div>
+
+<div class="recommendation">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>Strong Password Enabled</span>
+
+</div>
+
+<div class="recommendation">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>AES-256 Encryption Active</span>
+
+</div>
+
+<div class="recommendation">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>Recovery Email Verified</span>
+
+</div>
+
+<div class="recommendation">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>Two-Factor Authentication Enabled</span>
+
+</div>
+
+<div class="recommendation">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>No Suspicious Login Activity</span>
+
+</div>
+
+<div class="score-box">
+
+<h2>98%</h2>
+
+<p>Excellent Security</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ADVANCED SECURITY ================= -->
+
+<section class="advanced-security">
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+Advanced Security Tools
+
+</h2>
+
+</div>
+
+<div class="tools">
+
+<button>
+
+<i class="fa-solid fa-file-arrow-down"></i>
+
+Download Security Report
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Export Login History
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-list-check"></i>
+
+View Audit Logs
+
+</button>
+
+<button>
+
+<i class="fa-solid fa-key"></i>
+
+Backup Encryption Keys
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Secure Approval Vault. All Rights Reserved.
+
+</p>
+
+<span>
+
+Version 1.0
+
+</span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="security.js"></script>
+
+</body>
+
+</html>

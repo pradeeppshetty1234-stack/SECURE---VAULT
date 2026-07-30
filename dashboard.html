@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Approval Vault</title>
+    <link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <!-- Place your logo inside an images folder -->
+<img src="logo.png" alt="Secure Approval Vault Logo">
+
+            <h2>Secure Approval Vault</h2>
+
+        </div>
+
+        <ul>
+
+            <!-- Dashboard -->
+
+            <li class="active" onclick="location.href='dashboard.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <!-- My Vault -->
+
+            <li onclick="location.href='myvault.html'">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>My Vault</span>
+
+            </li>
+            <li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+            <!-- Upload -->
+
+            <li onclick="location.href='upload.html'">
+
+                <i class="fa-solid fa-upload"></i>
+
+                <span>Upload File</span>
+
+            </li>
+
+            <!-- Approval -->
+
+            
+
+            <li onclick="location.href='approval.html'">
+                 <i class="fa-solid fa-user-check"></i> 
+
+                <span>Approval Requests</span>
+
+             <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+
+            <!-- Activity -->
+
+            <li onclick="location.href='activity.html'">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Activity Logs</span>
+
+            </li>
+
+            <!-- Security -->
+
+            <li onclick="location.href='security.html'">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Security</span>
+
+            </li>
+
+            <!-- Settings -->
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </li>
+
+            <!-- Logout -->
+
+            <li class="logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </li>
+
+        </ul>
+
+        <div class="storage">
+
+            <h3>Storage</h3>
+
+            <div class="progress">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+            <p>68 GB of 100 GB Used</p>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main">
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       placeholder="Search files...">
+
+            </div>
+
+            <div class="top-right">
+
+                <div class="notification">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span class="count">3</span>
+
+                </div>
+
+                <div class="profile">
+
+                    <img src="profile.png" alt="Profile">
+
+                    <div>
+
+                        <h4>Pradeep</h4>
+
+                        <small>Administrator</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= WELCOME ================= -->
+
+        <section class="welcome">
+
+            <div>
+
+                <h1>Welcome Back 👋</h1>
+
+                <p>
+                    Manage encrypted files, monitor approvals and keep your
+                    documents secure.
+                </p>
+
+            </div>
+
+            <button class="uploadBtn" onclick="location.href='upload.html'">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Upload File
+
+            </button>
+
+        </section>
+
+        <!-- ================= QUICK STATS ================= -->
+
+        <section class="stats">
+            <div class="card">
+
+    <div class="card-icon blue">
+
+        <i class="fa-solid fa-folder"></i>
+
+    </div>
+
+    <div class="card-info">
+
+        <h2>248</h2>
+
+        <p>Total Files</p>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-icon cyan">
+
+        <i class="fa-solid fa-lock"></i>
+
+    </div>
+
+    <div class="card-info">
+
+        <h2>186</h2>
+
+        <p>Encrypted Files</p>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-icon orange">
+
+        <i class="fa-solid fa-user-clock"></i>
+
+    </div>
+
+    <div class="card-info">
+
+        <h2>12</h2>
+
+        <p>Pending Approvals</p>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <div class="card-icon green">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+    </div>
+
+    <div class="card-info">
+
+        <h2>174</h2>
+
+        <p>Approved Files</p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="quick-actions">
+
+    <div class="action-card" onclick="location.href='upload.html'">
+
+        <i class="fa-solid fa-upload"></i>
+
+        <h3>Upload File</h3>
+
+        <p>Encrypt and upload a new file.</p>
+
+    </div>
+
+    <div class="action-card" onclick="location.href='myvault.html'">
+
+        <i class="fa-solid fa-folder-open"></i>
+
+        <h3>Open Vault</h3>
+
+        <p>Browse all encrypted documents.</p>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fa-solid fa-user-check"></i>
+
+        <h3>Approval Requests</h3>
+
+        <p>Review files awaiting your approval.</p>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fa-solid fa-download"></i>
+
+        <h3>Download Files</h3>
+
+        <p>Download approved encrypted files.</p>
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN GRID ================= -->
+
+<section class="dashboard-grid">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <!-- ================= RECENT FILES ================= -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>Recent Files</h2>
+
+                <a href="myvault.html">View All</a>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>File</th>
+
+                        <th>Owner</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <tr>
+
+    <td>Project_Report.pdf</td>
+
+    <td>Akash</td>
+
+    <td>
+
+        <span class="status approved">
+
+            Approved
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="table-btn">
+
+            Open
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Resume.docx</td>
+
+    <td>Akash</td>
+
+    <td>
+
+        <span class="status pending">
+
+            Pending
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="table-btn">
+
+            View
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Budget.xlsx</td>
+
+    <td>Rahul</td>
+
+    <td>
+
+        <span class="status rejected">
+
+            Rejected
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="table-btn">
+
+            Details
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Research.zip</td>
+
+    <td>Priya</td>
+
+    <td>
+
+        <span class="status approved">
+
+            Approved
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="table-btn">
+
+            Download
+
+        </button>
+
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= APPROVAL REQUESTS ================= -->
+
+<div class="panel">
+
+    <div class="panel-header">
+
+        <h2>Pending Approval Requests</h2>
+
+        <a href="#">View All</a>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>File</th>
+
+                <th>Requested By</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>Proposal.pdf</td>
+
+                <td>Rahul</td>
+
+                <td>
+
+                    <button class="approve-btn">
+
+                        Approve
+
+                    </button>
+
+                    <button class="reject-btn">
+
+                        Reject
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>Invoice.pdf</td>
+
+                <td>Priya</td>
+
+                <td>
+
+                    <button class="approve-btn">
+
+                        Approve
+
+                    </button>
+
+                    <button class="reject-btn">
+
+                        Reject
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</div>
+
+<!-- ================= RIGHT PANEL ================= -->
+
+<div class="right-panel">
+
+    <div class="panel">
+
+        <h2>Security Status</h2>
+
+        <div class="security-box">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>Vault Protected</h3>
+
+            <p>AES-256 Encryption Enabled</p>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <h2>Recent Activity</h2>
+
+        <ul class="activity-list">
+
+            <li>
+
+                <i class="fa-solid fa-upload"></i>
+
+                Uploaded "Project_Report.pdf"
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-user-check"></i>
+
+                Rahul approved your file
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-lock"></i>
+
+                File encrypted successfully
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-download"></i>
+
+                Resume.docx downloaded
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-clock"></i>
+
+                Proposal.pdf awaiting approval
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="panel">
+
+        <h2>Account Overview</h2>
+
+        <div class="overview">
+
+            <div>
+
+                <h3>Last Login</h3>
+
+                <p>Today • 9:42 AM</p>
+
+            </div>
+
+            <div>
+
+                <h3>Security Level</h3>
+
+                <p>High</p>
+
+            </div>
+
+            <div>
+
+                <h3>Role</h3>
+
+                <p>Administrator</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Secure Approval Vault. All Rights Reserved.
+
+    </p>
+
+    <span>
+
+        Version 1.0
+
+    </span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

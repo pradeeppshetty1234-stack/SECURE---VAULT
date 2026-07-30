@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Approval Vault</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN FORM -->
+    <div class="form-box login">
+
+        <form action="#">
+
+            <h1 class="animation" style="--i:0;">Login</h1>
+
+            <div class="input-box animation" style="--i:1;">
+                <input type="text" required>
+                <label>Username</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="input-box animation" style="--i:2;">
+                <input type="password" id="loginPassword" required>
+                <label>Password</label>
+                <i class="fa-solid fa-eye" id="toggleLoginPassword"></i>
+            </div>
+
+            <div class="forgot animation" style="--i:3;">
+                <a href="#">Forgot Password?</a>
+            </div>
+<button type="button" onclick="window.location.href='dashboard.html'"  class="btn animation" style="--i:21;">
+
+    Login
+</button>
+    
+
+            <div class="linkTxt animation" style="--i:5;">
+                <p>
+                    Don't have an account?
+                    <a href="#" class="register-link">Sign Up</a>
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- SIGNUP FORM -->
+
+    <div class="form-box register">
+
+        <form action="#">
+
+            <h1 class="animation" style="--i:17;">Sign Up</h1>
+
+            <div class="input-box animation" style="--i:18;">
+                <input type="text" required>
+                <label>Full Name</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="input-box animation" style="--i:19;">
+                <input type="email" required>
+                <label>Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="input-box animation" style="--i:20;">
+                <input type="password" id="signupPassword" required>
+                <label>Password</label>
+                <i class="fa-solid fa-eye" id="toggleSignupPassword"></i>
+            </div>
+
+            <button type="submit" class="btn animation" style="--i:21;">
+                Register
+            </button>
+
+            <div class="linkTxt animation" style="--i:22;">
+                <p>
+                    Already have an account?
+                    <a href="#" class="login-link">Login</a>
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="info-box login">
+
+        <div class="info-content animation" style="--i:0;">
+
+            <img src="C:\Users\HP\Downloads\ChatGPT Image Jul 28, 2026, 07_55_03 PM.png" alt="Secure Approval Vault Logo" class="vault-logo">
+
+            <h2>Join Secure Vault</h2>
+
+            <p>
+                Secure Approval Vault protects your files with modern authentication and encryption.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- LEFT PANEL -->
+
+    <div class="info-box register">
+
+        <div class="info-content animation" style="--i:17;">
+
+            <img src="C:\Users\HP\Downloads\ChatGPT Image Jul 28, 2026, 07_55_03 PM.png"alt="Secure Approval Vault Logo" class="vault-logo">
+
+            <h2>Join Secure Vault</h2>
+
+            <p>
+                Create an account and manage your approvals securely from anywhere.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

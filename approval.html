@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Approval Requests | Secure Approval Vault</title>
+<link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="approval.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+
+<img src="logo.png" alt="Secure Approval Vault Logo">
+<h2>Secure Approval Vault</h2>
+
+</div>
+
+<ul>
+
+<li onclick="location.href='dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</li>
+
+<li onclick="location.href='myvault.html'">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<span>My Vault</span>
+
+</li>
+<li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+<li onclick="location.href='upload.html'">
+
+<i class="fa-solid fa-upload"></i>
+
+<span>Upload File</span>
+
+</li>
+
+<li class="active">
+
+<i class="fa-solid fa-user-check"></i>
+
+<span>Approval Requests</span>
+
+</li>
+ <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+
+<li onclick="location.href='activity.html'">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>Activity Logs</span>
+
+</li>
+ <li onclick="location.href='security.html'">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Security</span>
+
+</li>
+
+<li onclick="location.href='settings.html'">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</li>
+
+ <li class=logout>
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Logout</span>
+</li>
+</ul>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text" placeholder="Search approval requests...">
+
+</div>
+
+<div class="top-right">
+
+<div class="notification">
+
+<i class="fa-solid fa-bell"></i>
+
+<span class="count">4</span>
+
+</div>
+
+<div class="profile">
+
+<img src="profile.png"alt="Profile">
+
+<div>
+
+<h4>Pradeep</h4>
+
+<small>Approver</small>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="approval-header">
+
+<div>
+
+<h1>Approval Requests</h1>
+
+<p>
+
+Review pending encrypted files assigned to you and approve or reject them securely.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= FILTERS ================= -->
+
+<section class="filters">
+
+<select>
+
+<option>All Requests</option>
+
+<option>Pending</option>
+
+<option>Approved</option>
+
+<option>Rejected</option>
+
+</select>
+
+<select>
+
+<option>Newest First</option>
+
+<option>Oldest First</option>
+
+<option>High Priority</option>
+
+</select>
+
+</section>
+
+<!-- ================= APPROVAL TABLE ================= -->
+
+<section class="approval-table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>File</th>
+
+<th>Uploaded By</th>
+
+<th>Priority</th>
+
+<th>Progress</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+	<tr>
+
+<td>
+
+<div class="file-info">
+
+<i class="fa-solid fa-file-pdf pdf"></i>
+
+<div>
+
+<h4>Project_Report.pdf</h4>
+
+<small>2.4 MB</small>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Akash</td>
+
+<td>
+
+<span class="priority high">
+
+High
+
+</span>
+
+</td>
+
+<td>
+
+<div class="progress-box">
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:50%;"></div>
+
+</div>
+
+<small>1 / 2 Approved</small>
+
+</div>
+
+</td>
+
+<td>
+
+<span class="status pending">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+<button class="approve-btn">
+
+<i class="fa-solid fa-check"></i>
+
+Approve
+
+</button>
+
+<button class="reject-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+Reject
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="file-info">
+
+<i class="fa-solid fa-file-word word"></i>
+
+<div>
+
+<h4>Meeting_Minutes.docx</h4>
+
+<small>1.2 MB</small>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Rahul</td>
+
+<td>
+
+<span class="priority normal">
+
+Normal
+
+</span>
+
+</td>
+
+<td>
+
+<div class="progress-box">
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:33%;"></div>
+
+</div>
+
+<small>1 / 3 Approved</small>
+
+</div>
+
+</td>
+
+<td>
+
+<span class="status pending">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+<button class="approve-btn">
+
+<i class="fa-solid fa-check"></i>
+
+Approve
+
+</button>
+
+<button class="reject-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+Reject
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="file-info">
+
+<i class="fa-solid fa-file-excel excel"></i>
+
+<div>
+
+<h4>Budget_2026.xlsx</h4>
+
+<small>890 KB</small>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Priya</td>
+
+<td>
+
+<span class="priority urgent">
+
+Urgent
+
+</span>
+
+</td>
+
+<td>
+
+<div class="progress-box">
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:75%;"></div>
+
+</div>
+
+<small>3 / 4 Approved</small>
+
+</div>
+
+</td>
+
+<td>
+
+<span class="status pending">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+View
+
+</button>
+
+<button class="approve-btn">
+
+<i class="fa-solid fa-check"></i>
+
+Approve
+
+</button>
+
+<button class="reject-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+Reject
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= SUMMARY CARDS ================= -->
+
+<section class="summary">
+
+<div class="summary-card">
+
+<i class="fa-solid fa-hourglass-half"></i>
+
+<h2>12</h2>
+
+<p>Pending Requests</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>86</h2>
+
+<p>Approved Today</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+<h2>5</h2>
+
+<p>Rejected</p>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>24</h2>
+
+<p>Assigned To You</p>
+
+</div>
+
+
+</section>
+
+<!-- ================= APPROVAL DETAILS ================= -->
+
+<section class="details-section">
+
+<div class="details-card">
+
+<h2>
+
+<i class="fa-solid fa-file-shield"></i>
+
+Approval Details
+
+</h2>
+<div class="details-content">
+
+    <div class="detail-row">
+
+        <strong>File Name</strong>
+
+        <span>Project_Report.pdf</span>
+
+    </div>
+
+    <div class="detail-row">
+
+        <strong>Uploaded By</strong>
+
+        <span>Akash</span>
+
+    </div>
+
+    <div class="detail-row">
+
+        <strong>Encryption</strong>
+
+        <span>AES-256 Enabled</span>
+
+    </div>
+
+    <div class="detail-row">
+
+        <strong>Required Approvals</strong>
+
+        <span>2 of 3</span>
+
+    </div>
+
+    <div class="detail-row">
+
+        <strong>Your Status</strong>
+
+        <span class="status pending">
+
+            Pending
+
+        </span>
+
+    </div>
+
+    <div class="detail-row">
+
+        <strong>Description</strong>
+
+        <p>
+
+            Final project report for Secure Approval Vault.
+            Please review before public release.
+
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ================= APPROVAL TIMELINE ================= -->
+
+<div class="details-card">
+
+<h2>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Approval Timeline
+
+</h2>
+
+<ul class="timeline">
+
+<li>
+
+<i class="fa-solid fa-upload"></i>
+
+<span>
+
+File uploaded by Akash
+
+</span>
+
+<small>Today • 09:10 AM</small>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-user-check"></i>
+
+<span>
+
+Rahul approved the file
+
+</span>
+
+<small>Today • 09:32 AM</small>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-hourglass-half"></i>
+
+<span>
+
+Waiting for your approval
+
+</span>
+
+<small>Pending</small>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================= COMMENTS ================= -->
+
+<div class="details-card">
+
+<h2>
+
+<i class="fa-solid fa-comments"></i>
+
+Approval Comment
+
+</h2>
+
+<textarea
+rows="5"
+placeholder="Write a comment before approving or rejecting..."></textarea>
+
+<div class="comment-buttons">
+
+<button class="approve-btn">
+
+<i class="fa-solid fa-check"></i>
+
+Approve
+
+</button>
+
+<button class="reject-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+Reject
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Secure Approval Vault. All Rights Reserved.
+
+</p>
+
+<span>
+
+Version 1.0
+
+</span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="approval.js"></script>
+
+</body>
+
+</html>

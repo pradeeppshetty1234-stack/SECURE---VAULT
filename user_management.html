@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | Secure Approval Vault</title>
+<link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="user_management.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+   
+<aside class="sidebar" id="sidebar">
+
+    <div>
+
+        <div class="logo">
+
+         <img src="logo.png" alt="Secure Approval Vault Logo">
+
+            <h2>Secure Approval Vault</h2>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+             <li onclick="location.href='myvault.html'">
+
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>My Vault</span>
+
+            </li>
+            <li class="active">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+            <li onclick="location.href='upload.html'">
+
+                <i class="fa-solid fa-upload"></i>
+
+                <span>Upload File</span>
+
+            </li>
+
+            <li onclick="location.href='approval.html'">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <span>Approval Requests</span>
+
+            </li>
+             <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+            <li onclick="location.href='activity.html'">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Activity Logs</span>
+
+            </li>
+
+            <li onclick="location.href='security.html'">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Security</span>
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </li>
+
+            <li class="logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="storage">
+
+        <h3>Storage</h3>
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <p>6.8 GB of 10 GB Used</p>
+
+    </div>
+
+</aside>
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <h1>User Management</h1>
+
+            <div class="top-right">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search users...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="notification">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div class="profile">
+                    <img src="C:\Users\HP\Downloads\ChatGPT Image Jul 28, 2026, 07_55_03 PM.png" alt="Profile">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Page Heading -->
+
+        <div class="page-header">
+
+            <div>
+                <h2>Manage System Users</h2>
+                <p>Create, edit and manage employee accounts.</p>
+            </div>
+
+            <button class="add-user-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Add User
+            </button>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+
+                    <h3>Total Users</h3>
+                    <h1>152</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <div>
+
+                    <h3>Active Users</h3>
+                    <h1>143</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-slash"></i>
+
+                <div>
+
+                    <h3>Inactive Users</h3>
+                    <h1>9</h1>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <div>
+
+                    <h3>Administrators</h3>
+                    <h1>3</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+                <!-- ================= User Table ================= -->
+
+        <div class="table-container">
+
+            <div class="table-header">
+
+                <h2>All Users</h2>
+
+                <div class="table-actions">
+
+                    <button class="filter-btn">
+                        <i class="fa-solid fa-filter"></i>
+                        Filter
+                    </button>
+
+                    <button class="export-btn">
+                        <i class="fa-solid fa-download"></i>
+                        Export
+                    </button>
+
+                </div>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Branch</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Last Login</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="user-info">
+
+                                <img src="profile.png" alt="">
+
+                                <div>
+
+                                    <h4>Rahul Sharma</h4>
+                                    <p>EMP001</p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>rahul@gmail.com</td>
+
+                        <td>Bangalore</td>
+
+                        <td>
+                            <span class="role user">
+                                User
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status active">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>Today, 10:45 AM</td>
+
+                        <td>
+
+                            <button class="action-btn edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+
+                            <button class="action-btn delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="user-info">
+
+                                <img src="profile.png" alt="">
+
+                                <div>
+
+                                    <h4>Sneha Patil</h4>
+                                    <p>EMP002</p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>sneha@gmail.com</td>
+
+                        <td>Hubli</td>
+
+                        <td>
+
+                            <span class="role manager">
+
+                                Manager
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active">
+
+                                Active
+
+                            </span>
+
+                        </td>
+
+                        <td>Yesterday</td>
+
+                        <td>
+
+                            <button class="action-btn edit">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="action-btn delete">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="user-info">
+
+                                <img src="profile.png" alt="">
+
+                                <div>
+
+                                    <h4>Amit Kumar</h4>
+                                    <p>EMP003</p>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>amit@gmail.com</td>
+
+                        <td>Mysore</td>
+
+                        <td>
+
+                            <span class="role admin">
+
+                                Admin
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status inactive">
+
+                                Inactive
+
+                            </span>
+
+                        </td>
+
+                        <td>2 Days Ago</td>
+
+                        <td>
+
+                            <button class="action-btn edit">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                            </button>
+
+                            <button class="action-btn delete">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+            <!-- ================= Add User Modal ================= -->
+
+    <div class="modal" id="addUserModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add New User</h2>
+
+                <span class="close">&times;</span>
+
+            </div>
+
+            <form id="addUserForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter Full Name">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Username</label>
+                        <input type="text" placeholder="Enter Username">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter Email">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Enter Phone Number">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Branch</label>
+
+                        <select>
+
+                            <option>Bangalore</option>
+                            <option>Hubli</option>
+                            <option>Mysore</option>
+                            <option>Dharwad</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Department</label>
+
+                        <select>
+
+                            <option>Administration</option>
+                            <option>Finance</option>
+                            <option>Human Resources</option>
+                            <option>IT</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Role</label>
+
+                        <select>
+
+                            <option>User</option>
+                            <option>Manager</option>
+                            <option>Admin</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Status</label>
+
+                        <select>
+
+                            <option>Active</option>
+                            <option>Inactive</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter Password">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password">
+
+                    </div>
+
+                </div>
+
+                <div class="modal-buttons">
+
+                    <button type="button" class="cancel-btn">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit" class="create-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create User
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    </main>
+
+</div>
+
+<script src="user_management.js"></script>
+
+</body>
+</html>

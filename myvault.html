@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Vault | Secure Approval Vault</title>
+    <link rel="stylesheet" href="common.css">
+ <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="myvault.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+
+</head>
+
+<body>
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div>
+
+        <div class="logo">
+
+            <img src="logo.png" alt="Secure Approval Vault Logo">
+
+            <h2>Secure Approval Vault</h2>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li class="active">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>My Vault</span>
+
+            </li>
+            <li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+
+            <li onclick="location.href='upload.html'">
+
+                <i class="fa-solid fa-upload"></i>
+
+                <span>Upload File</span>
+
+            </li>
+
+            <li onclick="location.href='approval.html'">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <span>Approval Requests</span>
+
+            </li>
+             <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+            <li onclick="location.href='activity.html'">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Activity Logs</span>
+
+            </li>
+
+            <li onclick="location.href='security.html'">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Security</span>
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </li>
+
+            <li class="logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="storage">
+
+        <h3>Storage</h3>
+
+        <div class="progress">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <p>6.8 GB of 10 GB Used</p>
+
+    </div>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<header class="topbar">
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text"
+        placeholder="Search encrypted files...">
+
+    </div>
+
+    <div class="top-right">
+
+        <div class="notification">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span class="count">3</span>
+
+        </div>
+
+        <div class="profile">
+
+            <img src="profile.png" alt="Profile">
+
+            <div>
+
+                <h4>pradeep</h4>
+
+                <small>Administrator</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="vault-header">
+
+    <div>
+
+        <h1>My Vault 🔐</h1>
+
+        <p>
+
+            Access, manage and download your encrypted files securely.
+
+        </p>
+
+    </div>
+
+    
+</section>
+
+<!-- ================= FILTERS ================= -->
+
+<section class="filters">
+
+    <select>
+
+        <option>All Files</option>
+
+        <option>PDF</option>
+
+        <option>Word</option>
+
+        <option>Excel</option>
+
+        <option>Images</option>
+
+        <option>ZIP</option>
+
+    </select>
+
+    <select>
+
+        <option>All Status</option>
+
+        <option>Approved</option>
+
+        <option>Pending</option>
+
+        <option>Rejected</option>
+
+    </select>
+
+    <select>
+
+        <option>Sort By</option>
+
+        <option>Newest</option>
+
+        <option>Oldest</option>
+
+        <option>Name (A-Z)</option>
+
+        <option>Name (Z-A)</option>
+
+    </select>
+
+</section>
+
+<!-- ================= FILE TABLE ================= -->
+
+<section class="vault-table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>File Name</th>
+
+<th>Type</th>
+
+<th>Size</th>
+
+<th>Uploaded</th>
+
+<th>Approval</th>
+
+<th>Encryption</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+    <tr>
+    <td>
+        <div class="file-name">
+            <i class="fa-solid fa-file-pdf pdf"></i>
+            <span>Project_Report.pdf</span>
+        </div>
+    </td>
+    <td>PDF</td>
+    <td>2.4 MB</td>
+    <td>Today</td>
+    <td><span class="status approved">Approved</span></td>
+    <td><span class="encrypt">AES-256</span></td>
+    <td>
+        <button class="view-btn"><i class="fa-solid fa-eye"></i></button>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="file-name">
+            <i class="fa-solid fa-file-word word"></i>
+            <span>Resume.docx</span>
+        </div>
+    </td>
+    <td>DOCX</td>
+    <td>850 KB</td>
+    <td>Yesterday</td>
+    <td><span class="status pending">Pending</span></td>
+    <td><span class="encrypt">AES-256</span></td>
+    <td>
+        <button class="view-btn"><i class="fa-solid fa-eye"></i></button>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="file-name">
+            <i class="fa-solid fa-file-image image"></i>
+            <span>Vacation.jpg</span>
+        </div>
+    </td>
+    <td>Image</td>
+    <td>3.8 MB</td>
+    <td>20 Jul 2026</td>
+    <td><span class="status approved">Approved</span></td>
+    <td><span class="encrypt">AES-256</span></td>
+    <td>
+        <button class="view-btn"><i class="fa-solid fa-eye"></i></button>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="file-name">
+            <i class="fa-solid fa-file-zipper zip"></i>
+            <span>Source_Code.zip</span>
+        </div>
+    </td>
+    <td>ZIP</td>
+    <td>12.5 MB</td>
+    <td>18 Jul 2026</td>
+    <td><span class="status rejected">Rejected</span></td>
+    <td><span class="encrypt">AES-256</span></td>
+    <td>
+        <button class="view-btn"><i class="fa-solid fa-eye"></i></button>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="file-name">
+            <i class="fa-solid fa-file-excel excel"></i>
+            <span>Budget.xlsx</span>
+        </div>
+    </td>
+    <td>XLSX</td>
+    <td>1.1 MB</td>
+    <td>15 Jul 2026</td>
+    <td><span class="status approved">Approved</span></td>
+    <td><span class="encrypt">AES-256</span></td>
+    <td>
+        <button class="view-btn"><i class="fa-solid fa-eye"></i></button>
+        <button class="download-btn"><i class="fa-solid fa-download"></i></button>
+        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+    </td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section class="summary">
+
+    <div class="summary-card">
+        <i class="fa-solid fa-folder"></i>
+        <h2>248</h2>
+        <p>Total Files</p>
+    </div>
+
+    <div class="summary-card">
+        <i class="fa-solid fa-hard-drive"></i>
+        <h2>6.8 GB</h2>
+        <p>Storage Used</p>
+    </div>
+
+    <div class="summary-card">
+        <i class="fa-solid fa-lock"></i>
+        <h2>186</h2>
+        <p>Encrypted Files</p>
+    </div>
+
+    <div class="summary-card">
+        <i class="fa-solid fa-user-check"></i>
+        <h2>37</h2>
+        <p>Approved Files</p>
+    </div>
+
+</section>
+
+<section class="recent">
+
+    <div class="section-title">
+        <h2>Recent Uploads</h2>
+    </div>
+
+    <div class="recent-files">
+        <div class="recent-card">
+
+    <i class="fa-solid fa-file-pdf pdf"></i>
+
+    <div>
+
+        <h3>Project_Report.pdf</h3>
+
+        <p>Uploaded Today • 2.4 MB</p>
+
+    </div>
+
+</div>
+
+<div class="recent-card">
+
+    <i class="fa-solid fa-file-word word"></i>
+
+    <div>
+
+        <h3>Resume.docx</h3>
+
+        <p>Uploaded Yesterday • 850 KB</p>
+
+    </div>
+
+</div>
+
+<div class="recent-card">
+
+    <i class="fa-solid fa-file-image image"></i>
+
+    <div>
+
+        <h3>Vacation.jpg</h3>
+
+        <p>Uploaded 20 Jul 2026 • 3.8 MB</p>
+
+    </div>
+
+</div>
+
+<div class="recent-card">
+
+    <i class="fa-solid fa-file-zipper zip"></i>
+
+    <div>
+
+        <h3>Source_Code.zip</h3>
+
+        <p>Uploaded 18 Jul 2026 • 12.5 MB</p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SECURITY STATUS ================= -->
+
+<section class="security-status">
+
+    <div class="security-card">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h3>Vault Protection</h3>
+
+        <p>
+
+            All files are encrypted using AES-256 before storage.
+
+        </p>
+
+    </div>
+
+    <div class="security-card">
+
+        <i class="fa-solid fa-user-lock"></i>
+
+        <h3>Approval Workflow</h3>
+
+        <p>
+
+            Protected files require authorized approval before access.
+
+        </p>
+
+    </div>
+
+    <div class="security-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h3>Storage Health</h3>
+
+        <p>
+
+            68% of your vault storage is currently in use.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Secure Approval Vault
+
+    </p>
+
+    <span>
+
+        Version 1.0
+
+    </span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="myvault.js"></script>
+
+</body>
+
+</html>

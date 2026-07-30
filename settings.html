@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Secure Approval Vault</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="settings.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+<img src="logo.png" alt="Secure Approval Vault Logo">
+
+<h2>Secure Approval Vault</h2>
+
+</div>
+
+<ul>
+
+<li onclick="location.href='dashboard.html'">
+<i class="fa-solid fa-house"></i>
+<span>Dashboard</span>
+</li>
+
+<li onclick="location.href='myvault.html'">
+<i class="fa-solid fa-folder-open"></i>
+<span>My Vault</span>
+</li>
+<li onclick="location.href='user_management.html'">
+    <i class="fa-solid fa-users"></i>
+    <span>User Management</span>
+</li>
+<li onclick="location.href='upload.html'">
+<i class="fa-solid fa-upload"></i>
+<span>Upload File</span>
+</li>
+
+<li onclick="location.href='approval.html'">
+<i class="fa-solid fa-user-check"></i>
+<span>Approval Requests</span>
+</li>
+ <li onclick="location.href='branch_management.html'">
+            <i class="fa-solid fa-building"></i>
+            <span>Branch Management</span>
+        </li>
+
+<li onclick="location.href='activity.html'">
+<i class="fa-solid fa-clock-rotate-left"></i>
+<span>Activity Logs</span>
+</li>
+
+<li onclick="location.href='security.html'">
+<i class="fa-solid fa-shield-halved"></i>
+<span>Security</span>
+</li>
+
+<li class="active">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</li>
+
+<li class="logout">
+<i class="fa-solid fa-right-from-bracket"></i>
+<span>Logout</span>
+</li>
+
+</ul>
+
+<div class="storage">
+
+<h3>Storage</h3>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<p>68 GB of 100 GB Used</p>
+
+</div>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text" placeholder="Search Settings...">
+
+</div>
+
+<div class="top-right">
+
+<div class="notification">
+
+<i class="fa-solid fa-bell"></i>
+
+<span class="count">2</span>
+
+</div>
+
+<div class="profile">
+
+<img src="profile.png"alt="Profile">
+
+<div>
+
+<h4>Pradeep</h4>
+
+<small>Administrator</small>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+<h1>
+<i class="fa-solid fa-gear"></i>
+Settings
+</h1>
+
+<p>
+Manage your account information, preferences, notifications and application settings.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ROW 1 : PROFILE + NOTIFICATION SETTINGS               -->
+<!-- ===================================================== -->
+
+<section class="settings-grid">
+
+<!-- ================= PROFILE ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-user"></i>
+
+Profile Information
+
+</h2>
+
+</div>
+
+<div class="profile-picture">
+
+<img src="images/profile.png" alt="Profile">
+
+<button>
+
+<i class="fa-solid fa-camera"></i>
+
+Change Photo
+
+</button>
+
+</div>
+
+<div class="input-group">
+
+<label>Full Name</label>
+
+<input type="text" value="Akash">
+
+</div>
+
+<div class="input-group">
+
+<label>Email</label>
+
+<input type="email" value="akash@gmail.com">
+
+</div>
+
+<div class="input-group">
+
+<label>Phone Number</label>
+
+<input type="text" value="+91 9876543210">
+
+</div>
+
+<button class="save-btn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+</div>
+
+<!-- ================= NOTIFICATION SETTINGS ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-bell"></i>
+
+Notification Settings
+
+</h2>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Email Notifications</h3>
+
+<p>Receive important updates by email.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Approval Requests</h3>
+
+<p>Notify when someone requests file approval.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Security Alerts</h3>
+
+<p>Receive alerts for suspicious activity.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Upload Notifications</h3>
+
+<p>Notify after successful file uploads.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================================================== -->
+<!-- ROW 2 : APPEARANCE + PREFERENCES                      -->
+<!-- ===================================================== -->
+
+<section class="settings-grid">
+
+<!-- ================= APPEARANCE ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-palette"></i>
+
+Appearance
+
+</h2>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Dark Mode</h3>
+
+<p>Enable the dark cybersecurity theme.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox"id="darkModeToggle">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ================= PREFERENCES ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-globe"></i>
+
+Preferences
+
+</h2>
+
+</div>
+
+<div class="input-group">
+
+<label>Language</label>
+
+<select>
+
+<option selected>English</option>
+
+<option>Kannada</option>
+
+<option>Hindi</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Time Zone</label>
+
+<select>
+
+<option selected>Asia/Kolkata (IST)</option>
+
+<option>UTC</option>
+
+<option>America/New_York</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Date Format</label>
+
+<select>
+
+<option>DD-MM-YYYY</option>
+
+<option>DD/MM/YYYY</option>
+
+<option>MM/DD/YYYY</option>
+
+</select>
+
+</div>
+
+<button class="save-btn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Preferences
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ROW 3 : STORAGE + BACKUP                             -->
+<!-- ===================================================== -->
+
+<section class="settings-grid">
+
+<!-- ================= STORAGE ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-hard-drive"></i>
+
+Storage Usage
+
+</h2>
+
+</div>
+
+<h3>68 GB of 100 GB Used</h3>
+
+<div class="storage-bar">
+
+<div class="storage-fill"></div>
+
+</div>
+
+<p>32 GB Available</p>
+
+<button class="upgrade-btn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+Upgrade Storage
+
+</button>
+
+</div>
+
+<!-- ================= BACKUP ================= -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-cloud-arrow-down"></i>
+
+Backup & Export
+
+</h2>
+
+</div>
+
+<button class="tool-btn">
+
+<i class="fa-solid fa-download"></i>
+
+Download Account Data
+
+</button>
+
+<button class="tool-btn">
+
+<i class="fa-solid fa-file-export"></i>
+
+Export Activity Logs
+
+</button>
+
+<button class="tool-btn">
+
+<i class="fa-solid fa-database"></i>
+
+Backup Settings
+
+</button>
+
+</div>
+
+</section>
+<!-- ===================================================== -->
+<!-- DANGER ZONE                                           -->
+<!-- ===================================================== -->
+
+<section class="danger-zone">
+
+<div class="panel danger">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Danger Zone
+
+</h2>
+
+</div>
+
+<p>
+These actions are irreversible. Please proceed carefully.
+</p>
+
+<div class="danger-buttons">
+
+<button class="danger-btn">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete Account
+
+</button>
+
+<button class="danger-btn">
+
+<i class="fa-solid fa-broom"></i>
+
+Clear Activity Logs
+
+</button>
+
+<button class="danger-btn">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+Reset Settings
+
+</button>
+
+<button class="danger-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout All Devices
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ABOUT                                                 -->
+<!-- ===================================================== -->
+
+<section class="about-section">
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+About Secure Approval Vault
+
+</h2>
+
+</div>
+
+<table class="about-table">
+
+<tr>
+<td>Application</td>
+<td>Secure Approval Vault</td>
+</tr>
+
+<tr>
+<td>Version</td>
+<td>1.0</td>
+</tr>
+
+<tr>
+<td>Encryption</td>
+<td>AES-256</td>
+</tr>
+
+<tr>
+<td>Password Hashing</td>
+<td>bcrypt</td>
+</tr>
+
+<tr>
+<td>Developer</td>
+<td>Your Name</td>
+</tr>
+
+<tr>
+<td>License</td>
+<td>Educational Project</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Secure Approval Vault. All Rights Reserved.
+</p>
+
+<span>
+Version 1.0
+</span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="settings.js"></script>
+
+
+
+</body>
+
+</html>

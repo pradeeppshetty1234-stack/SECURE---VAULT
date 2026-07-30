@@ -1,0 +1,242 @@
+
+/* ==========================================
+   GLOBAL LIGHT MODE
+========================================== */
+
+body.light-mode{
+    background:#f5f7fa;
+    color:#1f2937;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+body.light-mode .main{
+    background:#f5f7fa;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+body.light-mode .sidebar{
+    background:#ffffff;
+    border-right:1px solid #dcdcdc;
+}
+
+body.light-mode .sidebar .logo h2{
+    color:#222;
+}
+
+body.light-mode .sidebar li{
+    color:#444;
+}
+
+body.light-mode .sidebar li i{
+    color:#444;
+}
+
+body.light-mode .sidebar li:hover,
+body.light-mode .sidebar li.active{
+    background:#0d6efd;
+    color:#fff;
+}
+
+body.light-mode .sidebar li:hover i,
+body.light-mode .sidebar li.active i{
+    color:#fff;
+}
+
+/* ==========================
+   STORAGE
+========================== */
+
+body.light-mode .storage h3,
+body.light-mode .storage p{
+    color:#444;
+}
+
+body.light-mode .progress{
+    background:#dcdcdc;
+}
+
+body.light-mode .progress-fill{
+    background:#0d6efd;
+}
+
+/* ==========================
+   TOPBAR
+========================== */
+
+body.light-mode .topbar{
+    background:transparent;
+}
+
+body.light-mode .search-box{
+    background:#ffffff;
+    border:1px solid #d0d7de;
+}
+
+body.light-mode .search-box input{
+    color:#222;
+}
+
+body.light-mode .search-box i{
+    color:#0d6efd;
+}
+
+body.light-mode .notification i{
+    color:#222;
+}
+
+body.light-mode .profile h4{
+    color:#222;
+}
+
+body.light-mode .profile small{
+    color:#666;
+}
+
+/* ==========================
+   TITLES
+========================== */
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4{
+    color:#222;
+}
+
+body.light-mode p,
+body.light-mode span,
+body.light-mode small,
+body.light-mode td,
+body.light-mode label{
+    color:#555;
+}
+
+/* ==========================
+   CARDS & PANELS
+========================== */
+
+body.light-mode .card,
+body.light-mode .panel,
+body.light-mode .vault-card,
+body.light-mode .panic-card{
+    background:#ffffff;
+    border:1px solid #dcdcdc;
+    color:#222;
+}
+
+body.light-mode .card:hover,
+body.light-mode .panel:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   TABLES
+========================== */
+
+body.light-mode table{
+    background:#fff;
+}
+
+body.light-mode th{
+    background:#f1f5f9;
+    color:#222;
+}
+
+body.light-mode td{
+    border-color:#ddd;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select{
+    background:#fff;
+    color:#222;
+    border:1px solid #ccc;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder{
+    color:#888;
+}
+
+body.light-mode input:focus,
+body.light-mode textarea:focus,
+body.light-mode select:focus{
+    border-color:#0d6efd;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+body.light-mode button{
+    color:#fff;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+body.light-mode footer{
+    border-top:1px solid #ddd;
+    color:#555;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+body.light-mode::-webkit-scrollbar{
+    width:8px;
+}
+
+body.light-mode::-webkit-scrollbar-track{
+    background:#f5f7fa;
+}
+
+body.light-mode::-webkit-scrollbar-thumb{
+    background:#bcbcbc;
+}
+
+body.light-mode::-webkit-scrollbar-thumb:hover{
+    background:#888;
+}
+/* Dashboard Cards */
+
+body.light-mode .welcome-card,
+body.light-mode .quick-card,
+body.light-mode .stat-card,
+body.light-mode .activity-card,
+body.light-mode .recent-card,
+body.light-mode .chart-card,
+body.light-mode .overview-card{
+
+    background:#ffffff !important;
+    color:#222 !important;
+    border:1px solid #dcdcdc;
+
+}
+
+body.light-mode .welcome-card h1,
+body.light-mode .welcome-card h2,
+body.light-mode .welcome-card p,
+
+body.light-mode .quick-card h2,
+body.light-mode .quick-card p,
+
+body.light-mode .stat-card h2,
+body.light-mode .stat-card p{
+
+    color:#222 !important;
+
+}

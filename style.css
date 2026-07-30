@@ -1,0 +1,480 @@
+/* ===============================
+   RESET
+=============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#081c36,#0a3d62,#000814);
+    overflow:hidden;
+}
+
+/* ===============================
+   CONTAINER
+=============================== */
+
+.container{
+    position:relative;
+    width:900px;
+    height:550px;
+    background:#08111f;
+    border:2px solid #00bfff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 40px rgba(0,191,255,.3);
+}
+
+#toggleSignupPassword{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#00bfff;
+    cursor:pointer;
+}
+
+/* ===============================
+   FORM BOX
+=============================== */
+
+.form-box{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.7s ease;
+}
+
+.form-box.login{
+    left:0;
+}
+
+.form-box.register{
+    right:0;
+    pointer-events:none;
+}
+
+/* ===============================
+   FORM
+=============================== */
+
+form{
+    width:100%;
+    padding:40px;
+}
+
+h1{
+    font-size:36px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* ===============================
+   INPUT BOX
+=============================== */
+
+.input-box{
+    position:relative;
+    width:100%;
+    height:55px;
+    margin:25px 0;
+}
+
+.input-box input{
+    width:100%;
+    height:100%;
+    background:transparent;
+    border:2px solid #00bfff;
+    outline:none;
+    border-radius:40px;
+    font-size:16px;
+    color:#fff;
+    padding:0 50px 0 20px;
+}
+
+.input-box label{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#aaa;
+    pointer-events:none;
+    transition:.3s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-8px;
+    background:#08111f;
+    padding:0 8px;
+    color:#00bfff;
+    font-size:13px;
+}
+
+.input-box i{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#00bfff;
+}
+
+/* ===============================
+   FORGOT PASSWORD
+=============================== */
+
+.forgot{
+    text-align:right;
+    margin-top:-10px;
+}
+
+.forgot a{
+    color:#00bfff;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
+
+.btn{
+    width:100%;
+    height:50px;
+    margin-top:25px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(90deg,#007bff,#00d4ff);
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00bfff;
+}
+
+/* ===============================
+   LINK TEXT
+=============================== */
+
+.linkTxt{
+    margin-top:20px;
+    text-align:center;
+}
+
+.linkTxt p{
+    color:#ddd;
+}
+
+.linkTxt a{
+    color:#00bfff;
+    font-weight:600;
+    text-decoration:none;
+}
+/* ===========================
+   INFO PANELS
+=========================== */
+
+.info-box{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    transition:.8s ease;
+    z-index:2;
+}
+
+.info-box.login{
+    position:absolute;
+    right:0;
+    top:0;
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    z-index:5;
+}
+
+.container::before{
+    display:none;
+}
+
+.info-box.login,
+.info-box.register{
+    background:rgba(0,191,255,0.08);
+    backdrop-filter:blur(15px);
+    border-left:1px solid rgba(255,255,255,.15);
+}
+
+.container::before{
+    display:none;
+}
+
+.info-content h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.info-content p{
+    font-size:15px;
+    line-height:1.6;
+    color:#dbeafe;
+}
+
+/* ===========================
+   SLIDING BLUE PANEL
+=========================== */
+
+.container::before{
+    content:'';
+    position:absolute;
+    top:-5%;
+    right:-250%;
+    width:300%;
+    height:110%;
+    background:linear-gradient(135deg,#0ea5e9,#2563eb,#1d4ed8);
+    border-radius:150px;
+    transform:rotate(10deg);
+    transition:1.2s ease;
+    z-index:1;
+}
+
+.container.active::before{
+    right:50%;
+}
+
+/* ===========================
+   FORM SWITCHING
+=========================== */
+
+.container.active .form-box.login{
+    left:-50%;
+    opacity:0;
+    pointer-events:none;
+}
+
+.container.active .form-box.register{
+    right:0;
+    opacity:1;
+    pointer-events:auto;
+}
+
+.container.active .info-box.login{
+    right:-50%;
+}
+
+.container.active .info-box.register{
+    left:0;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.animation{
+    transform:translateX(120%);
+    opacity:0;
+    filter:blur(10px);
+    transition:.7s ease;
+    transition-delay:0.7s;
+}
+
+.form-box.register .animation,
+.info-box.register .animation{
+    transform:translateX(-120%);
+}
+
+.container .form-box.login .animation,
+.container .info-box.login .animation{
+    transform:translateX(0);
+    opacity:1;
+    filter:blur(0);
+}
+
+.container.active .form-box.register .animation,
+.container.active .info-box.register .animation{
+    transform:translateX(0);
+    opacity:1;
+    filter:blur(0);
+}
+
+.container.active .form-box.login .animation,
+.container.active .info-box.login .animation{
+    transform:translateX(120%);
+    opacity:0;
+    filter:blur(10px);
+}
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width:850px){
+
+    .container{
+        width:95%;
+        height:700px;
+    }
+
+    .form-box{
+        width:100%;
+        height:70%;
+        top:30%;
+    }
+
+    .form-box.login{
+        left:0;
+    }
+
+    .form-box.register{
+        right:-100%;
+    }
+
+    .container.active .form-box.login{
+        left:-100%;
+    }
+
+    .container.active .form-box.register{
+        right:0;
+    }
+
+    .info-box{
+        width:100%;
+        height:30%;
+        left:0;
+    }
+
+    .info-box.login{
+        top:0;
+        right:0;
+    }
+
+    .info-box.register{
+        top:-30%;
+        left:0;
+    }
+
+    .container.active .info-box.login{
+        top:30%;
+        right:0;
+    }
+
+    .container.active .info-box.register{
+        top:0;
+        left:0;
+    }
+
+    .container::before{
+        width:100%;
+        height:300%;
+        left:0;
+        top:-270%;
+        transform:rotate(0deg);
+        border-radius:0 0 150px 150px;
+    }
+
+    .container.active::before{
+        top:70%;
+        left:0;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .info-content h2{
+        margin-top:20px;
+        margin-bottom:15px;
+    }
+
+    .info-content p{
+        font-size:14px;
+    }
+
+    .input-box i{
+        position:absolute;
+        right:20px;
+        top:50%;
+        transform:translateY(-50%);
+        color:#00bfff;
+        cursor:pointer;
+        z-index:10;
+    }
+
+    .btn{
+        height:48px;
+        font-size:17px;
+    }
+
+}
+
+/* ===========================
+   Z-INDEX
+=========================== */
+
+.form-box{
+    z-index:5;
+}
+
+.info-box{
+    z-index:4;
+}
+
+.container::before{
+    z-index:2;
+}
+
+/* ===========================
+   VAULT LOGO
+=========================== */
+
+.vault-logo{
+    width:280px;
+    display:block;
+    margin:0 auto 25px;
+    filter:drop-shadow(0 0 12px rgba(0,191,255,.8));
+    transition:.3s ease;
+}
+
+.vault-logo:hover{
+    transform:scale(1.05);
+    filter:drop-shadow(0 0 20px rgba(0,191,255,1));
+}
+
+/* ===========================
+   INFO CONTENT
+=========================== */
+
+.info-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    width:100%;
+    height:100%;
+    padding:20px;
+}

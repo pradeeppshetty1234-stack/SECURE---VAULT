@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Activity Logs | Secure Approval Vault</title>
+
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="activity.css">
+<link rel="stylesheet" href="theme.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<button class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+
+<img src="logo.png" alt="Secure Approval Vault Logo">
+
+<h2>Secure Approval Vault</h2>
+
+</div>
+
+<ul>
+
+<li onclick="location.href='dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</li>
+
+<li onclick="location.href='myvault.html'">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<span>My Vault</span>
+
+</li>
+
+<li onclick="location.href='user_management.html'">
+
+<i class="fa-solid fa-users"></i>
+
+<span>User Management</span>
+
+</li>
+
+<li onclick="location.href='upload.html'">
+
+<i class="fa-solid fa-upload"></i>
+
+<span>Upload File</span>
+
+</li>
+
+<li onclick="location.href='approval.html'">
+
+<i class="fa-solid fa-user-check"></i>
+
+<span>Approval Requests</span>
+
+</li>
+
+<li onclick="location.href='branch_management.html'">
+
+<i class="fa-solid fa-building"></i>
+
+<span>Branch Management</span>
+
+</li>
+
+<li class="active">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>Activity Logs</span>
+
+</li>
+
+<li onclick="location.href='security.html'">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Security</span>
+
+</li>
+
+<li onclick="location.href='settings.html'">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</li>
+
+<li class="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</li>
+
+</ul>
+
+<div class="storage">
+
+<h3>Storage</h3>
+
+<div class="progress">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<p>68 GB of 100 GB Used</p>
+
+</div>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search activity...">
+
+</div>
+
+<div class="top-right">
+
+<div class="notification">
+
+<i class="fa-solid fa-bell"></i>
+
+<span class="count">4</span>
+
+</div>
+
+<div class="profile">
+
+<img src="images/profile.png" alt="Profile">
+
+<div>
+
+<h4>Akash</h4>
+
+<small>Administrator</small>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="activity-header">
+
+<div>
+
+<h1>Activity Logs</h1>
+
+<p>
+
+Track every action performed inside the Secure Approval Vault.
+
+Monitor uploads, approvals, downloads and login history.
+
+</p>
+
+</div>
+
+<button class="export-btn">
+
+<i class="fa-solid fa-file-arrow-down"></i>
+
+Export Logs
+
+</button>
+
+</section>
+
+<!-- ================= SUMMARY CARDS ================= -->
+
+<section class="activity-stats">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-list"></i>
+
+<h2>1,248</h2>
+
+<p>Total Activities</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-upload"></i>
+
+<h2>326</h2>
+
+<p>Uploads</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h2>287</h2>
+
+<p>Approvals</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-download"></i>
+
+<h2>192</h2>
+
+<p>Downloads</p>
+
+</div>
+
+</section>
+
+<!-- ================= FILTER BAR ================= -->
+
+<section class="filter-bar">
+
+<div class="filter-group">
+
+<select>
+
+<option>All Activities</option>
+
+<option>Uploads</option>
+
+<option>Approvals</option>
+
+<option>Downloads</option>
+
+<option>Login History</option>
+
+</select>
+
+<select>
+
+<option>Today</option>
+
+<option>This Week</option>
+
+<option>This Month</option>
+
+<option>Last 30 Days</option>
+
+</select>
+
+<input
+type="text"
+placeholder="Search user or file...">
+
+</div>
+
+<button class="filter-btn">
+
+<i class="fa-solid fa-filter"></i>
+
+Apply Filter
+
+</button>
+
+</section>
+
+<!-- ================= ACTIVITY LOGS ================= -->
+
+<section class="activity-logs">
+
+<div class="logs-header">
+
+<h2>System Activity Logs</h2>
+
+<button>
+
+<i class="fa-solid fa-rotate"></i>
+
+Refresh
+
+</button>
+
+</div>
+
+<div class="logs-table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>File</th>
+
+<th>Activity</th>
+
+<th>Status</th>
+
+<th>Time</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+    <tr>
+
+<td>
+
+<div class="user-info">
+
+<img src="profile.png" alt="User">
+
+<div>
+
+<div class="user-name">Pradeep</div>
+
+<div class="user-role">Administrator</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+<div class="file-info">
+
+<div class="file-box">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<div>
+
+<div class="file-name">Project_Report.pdf</div>
+
+<div class="file-size">2.4 MB</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Uploaded File</td>
+
+<td>
+
+<span class="status success">
+
+Success
+
+</span>
+
+</td>
+
+<td>
+
+<span class="log-time">
+
+Today • 09:15 AM
+
+</span>
+
+</td>
+
+<td>
+
+<div class="table-actions">
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button class="info-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="user-info">
+
+<img src="images/profile.png" alt="User">
+
+<div>
+
+<div class="user-name">Rahul</div>
+
+<div class="user-role">Manager</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+<div class="file-info">
+
+<div class="file-box">
+
+<i class="fa-solid fa-file-word"></i>
+
+</div>
+
+<div>
+
+<div class="file-name">Invoice.docx</div>
+
+<div class="file-size">850 KB</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Approved File</td>
+
+<td>
+
+<span class="status info">
+
+Approved
+
+</span>
+
+</td>
+
+<td>
+
+<span class="log-time">
+
+Today • 09:32 AM
+
+</span>
+
+</td>
+
+<td>
+
+<div class="table-actions">
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button class="info-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="user-info">
+
+<img src="images/profile.png" alt="User">
+
+<div>
+
+<div class="user-name">Sneha</div>
+
+<div class="user-role">Finance</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+<div class="file-info">
+
+<div class="file-box">
+
+<i class="fa-solid fa-file-excel"></i>
+
+</div>
+
+<div>
+
+<div class="file-name">Budget.xlsx</div>
+
+<div class="file-size">1.9 MB</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Downloaded File</td>
+
+<td>
+
+<span class="status success">
+
+Downloaded
+
+</span>
+
+</td>
+
+<td>
+
+<span class="log-time">
+
+Today • 10:05 AM
+
+</span>
+
+</td>
+
+<td>
+
+<div class="table-actions">
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button class="info-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="user-info">
+
+<img src="images/profile.png" alt="User">
+
+<div>
+
+<div class="user-name">Priya</div>
+
+<div class="user-role">HR</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+<div class="file-info">
+
+<div class="file-box">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+</div>
+
+<div>
+
+<div class="file-name">Employee_List.pdf</div>
+
+<div class="file-size">640 KB</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>Rejected File</td>
+
+<td>
+
+<span class="status failed">
+
+Rejected
+
+</span>
+
+</td>
+
+<td>
+
+<span class="log-time">
+
+Today • 10:42 AM
+
+</span>
+
+</td>
+
+<td>
+
+<div class="table-actions">
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button class="download-btn">
+
+<i class="fa-solid fa-download"></i>
+
+</button>
+
+<button class="info-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="user-info">
+
+<img src="images/profile.png" alt="User">
+
+<div>
+
+<div class="user-name">Amit</div>
+
+<div class="user-role">Employee</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+<div class="file-info">
+
+<div class="file-box">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div>
+
+<div class="file-name">System Login</div>
+
+<div class="file-size">Authentication</div>
+
+</div>
+
+</div>
+
+</td>
+
+<td>User Login</td>
+
+<td>
+
+<span class="status warning">
+
+Logged In
+
+</span>
+
+</td>
+
+<td>
+
+<span class="log-time">
+
+Today • 11:18 AM
+
+</span>
+
+</td>
+
+<td>
+
+<div class="table-actions">
+
+<button class="view-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+<button class="info-btn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+<!-- ================= ANALYTICS SECTION ================= -->
+
+<section class="analytics-section">
+
+<div class="analytics-card">
+
+<h2>Overall Activity</h2>
+
+<div class="chart-circle">
+
+<span>72%</span>
+
+</div>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>File Operations</h2>
+
+<div class="progress-item">
+
+<h4>Uploads</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:85%;"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<h4>Downloads</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:68%;"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<h4>Approvals</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:91%;"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>System Usage</h2>
+
+<div class="progress-item">
+
+<h4>Storage Usage</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:70%;"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<h4>CPU Usage</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:42%;"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<h4>Memory Usage</h4>
+
+<div class="progress-bar">
+
+<div class="progress-fill" style="width:58%;"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SECURITY ALERTS ================= -->
+
+<section class="security-alerts">
+
+<h2>Security Alerts</h2>
+
+<div class="alert high">
+
+<div class="alert-icon">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+</div>
+
+<div class="alert-content">
+
+<h4>Multiple Failed Login Attempts</h4>
+
+<p>
+
+Five failed login attempts were detected from an unknown device.
+
+</p>
+
+<small>Today • 08:45 AM</small>
+
+</div>
+
+</div>
+
+<div class="alert medium">
+
+<div class="alert-icon">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+</div>
+
+<div class="alert-content">
+
+<h4>Approval Waiting</h4>
+
+<p>
+
+Seven files are awaiting administrator approval.
+
+</p>
+
+<small>Today • 09:10 AM</small>
+
+</div>
+
+</div>
+
+<div class="alert low">
+
+<div class="alert-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div class="alert-content">
+
+<h4>Backup Completed</h4>
+
+<p>
+
+Daily encrypted vault backup completed successfully.
+
+</p>
+
+<small>Today • 12:30 AM</small>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LOGIN HISTORY ================= -->
+
+<section class="login-history">
+
+<h2>Recent Login History</h2>
+
+<div class="login-item">
+
+<div class="login-device">
+
+<i class="fa-solid fa-desktop"></i>
+
+<div class="login-details">
+
+<h4>Windows PC</h4>
+
+<p>192.168.1.12</p>
+
+</div>
+
+</div>
+
+<span class="login-status online">
+
+Online
+
+</span>
+
+</div>
+
+<div class="login-item">
+
+<div class="login-device">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+<div class="login-details">
+
+<h4>Android Device</h4>
+
+<p>192.168.1.45</p>
+
+</div>
+
+</div>
+
+<span class="login-status idle">
+
+Idle
+
+</span>
+
+</div>
+
+<div class="login-item">
+
+<div class="login-device">
+
+<i class="fa-solid fa-laptop"></i>
+
+<div class="login-details">
+
+<h4>Office Laptop</h4>
+
+<p>192.168.1.20</p>
+
+</div>
+
+</div>
+
+<span class="login-status offline">
+
+Offline
+
+</span>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Secure Approval Vault. All Rights Reserved.
+
+</p>
+
+<span>
+
+Version 1.0
+
+</span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="activity.js"></script>
+
+</body>
+
+</html>

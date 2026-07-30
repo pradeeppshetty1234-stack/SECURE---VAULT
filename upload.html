@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Upload File | Secure Approval Vault</title>
+
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="upload.css">
+<link rel="stylesheet" href="theme.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<button class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="container">
+
+<!--==========================
+        SIDEBAR
+===========================-->
+
+<div class="sidebar" id="sidebar">
+
+    <div class="logo">
+
+        <h2>
+
+           <img src="logo.png" alt="Secure Approval Vault Logo">
+
+            Secure Vault
+        </h2>
+
+    </div>
+
+    <ul>
+
+        <li onclick="location.href='dashboard.html'">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+        </li>
+
+        <li onclick="location.href='myvault.html'">
+            <i class="fas fa-folder"></i>
+            <span>My Vault</span>
+        </li>
+
+        <li onclick="location.href='usermanagement.html'">
+            <i class="fas fa-users"></i>
+            <span>User Management</span>
+        </li>
+
+        <li class="active">
+            <i class="fas fa-upload"></i>
+            <span>Upload File</span>
+        </li>
+
+        <li onclick="location.href='approval.html'">
+            <i class="fas fa-check-circle"></i>
+            <span>Approval Requests</span>
+        </li>
+
+        <li onclick="location.href='branch.html'">
+            <i class="fas fa-code-branch"></i>
+            <span>Branch Management</span>
+        </li>
+
+        <li onclick="location.href='activity.html'">
+            <i class="fas fa-history"></i>
+            <span>Activity Logs</span>
+        </li>
+
+        <li onclick="location.href='security.html'">
+            <i class="fas fa-lock"></i>
+            <span>Security</span>
+        </li>
+
+        <li onclick="location.href='settings.html'">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </li>
+
+    </ul>
+
+    <div class="storage">
+
+        <h4>Storage Usage</h4>
+
+        <p>7.2 GB / 10 GB</p>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill" style="width:72%"></div>
+
+        </div>
+
+    </div>
+
+    <div class="logout">
+
+        <i class="fas fa-sign-out-alt"></i>
+
+        <span>Logout</span>
+
+    </div>
+
+</div>
+
+<!--==========================
+        MAIN
+===========================-->
+
+<div class="main">
+
+<div class="topbar">
+
+<div class="search-box">
+
+<input type="text" placeholder="Search files...">
+
+<i class="fas fa-search"></i>
+
+</div>
+
+<div class="top-right">
+
+<div class="notification">
+
+<i class="fas fa-bell"></i>
+
+</div>
+
+<div class="profile">
+
+<img src="profile.png" alt="profile">
+
+<div>
+
+<h4>Pradeep</h4>
+
+<small>Administrator</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!--==========================
+      PAGE HEADER
+===========================-->
+
+<div class="upload-header">
+
+<div>
+
+<h1>Upload Secure File</h1>
+
+<p>
+Encrypt your files with AES-256 and send them for secure approval.
+</p>
+
+</div>
+
+<button class="upload-btn">
+
+<i class="fas fa-plus"></i>
+
+New Upload
+
+</button>
+
+</div>
+
+<!--==========================
+      STATISTICS
+===========================-->
+
+<div class="upload-stats">
+
+<div class="stat-card">
+
+<i class="fas fa-file"></i>
+
+<h2>156</h2>
+
+<p>Total Files</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-cloud-upload-alt"></i>
+
+<h2>28</h2>
+
+<p>Today's Uploads</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-user-check"></i>
+
+<h2>13</h2>
+
+<p>Pending Approval</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fas fa-lock"></i>
+
+<h2>100%</h2>
+
+<p>Encrypted</p>
+
+</div>
+
+</div>
+<!--====================================
+        UPLOAD SECTION
+=====================================-->
+
+<div class="upload-section">
+
+    <!-- Drag & Drop -->
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        <h2>Drag & Drop Files Here</h2>
+
+        <p>
+            Upload confidential documents securely using
+            AES-256 encryption.
+        </p>
+
+        <button class="browse-btn" id="browseBtn">
+
+            Browse Files
+
+        </button>
+
+        <input
+            type="file"
+            id="fileInput"
+            hidden>
+
+    </div>
+
+    <!-- File Information -->
+
+    <div class="file-form">
+
+        <h2>File Details</h2>
+
+        <div class="input-group">
+
+            <label>File Name</label>
+
+            <input
+                type="text"
+                placeholder="Enter file name">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Description</label>
+
+            <textarea
+                placeholder="Enter file description"></textarea>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Select Approver</label>
+
+            <select>
+
+                <option>CEO</option>
+
+                <option>Branch Manager</option>
+
+                <option>HR Manager</option>
+
+                <option>Finance Manager</option>
+
+            </select>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Approval Priority</label>
+
+            <select>
+
+                <option>Normal</option>
+
+                <option>High</option>
+
+                <option>Urgent</option>
+
+            </select>
+
+        </div>
+
+        <div class="file-size">
+
+            <label>Upload Progress</label>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+
+                    0%
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-buttons">
+
+            <button
+                class="submit-btn encryptBtn">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Encrypt & Upload
+
+            </button>
+
+            <button
+                class="reset-btn removeBtn">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Remove File
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--====================================
+        STORAGE SECTION
+=====================================-->
+
+<div class="storage-section">
+
+    <!-- Selected File -->
+
+    <div class="storage-card">
+
+        <h2>
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            Selected File
+
+        </h2>
+
+        <div class="file-preview">
+
+            <i class="fa-solid fa-file-circle-plus"></i>
+
+            <h3>No File Selected</h3>
+
+            <p>
+                Choose a file to see its details here.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Security Information -->
+
+    <div class="storage-card">
+
+        <h2>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Security Information
+
+        </h2>
+
+        <div class="storage-info">
+
+            <div>
+
+                <span>AES-256 Encryption</span>
+
+                <strong>Enabled</strong>
+
+            </div>
+
+            <div>
+
+                <span>Multi User Approval</span>
+
+                <strong>Active</strong>
+
+            </div>
+
+            <div>
+
+                <span>Activity Logging</span>
+
+                <strong>Enabled</strong>
+
+            </div>
+
+            <div>
+
+                <span>Protected File Storage</span>
+
+                <strong>Secured</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--====================================
+        STORAGE & FILE TYPES
+=====================================-->
+
+<div class="storage-section">
+
+    <!-- Storage Usage -->
+
+    <div class="storage-card">
+
+        <h2>Storage Usage</h2>
+
+        <div class="storage-circle">
+
+            <span>72%</span>
+
+        </div>
+
+        <div class="storage-info">
+
+            <div>
+
+                <span>Used Space</span>
+
+                <strong>7.2 GB</strong>
+
+            </div>
+
+            <div>
+
+                <span>Available</span>
+
+                <strong>2.8 GB</strong>
+
+            </div>
+
+            <div>
+
+                <span>Total Space</span>
+
+                <strong>10 GB</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- File Categories -->
+
+    <div class="storage-card">
+
+        <h2>File Categories</h2>
+
+        <div class="file-types">
+
+            <div class="type-row">
+
+                <i class="fas fa-file-pdf"></i>
+
+                <div class="type-details">
+
+                    <h4>PDF Files</h4>
+
+                    <div class="type-progress">
+
+                        <span style="width:80%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="type-row">
+
+                <i class="fas fa-file-word"></i>
+
+                <div class="type-details">
+
+                    <h4>Word Documents</h4>
+
+                    <div class="type-progress">
+
+                        <span style="width:65%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="type-row">
+
+                <i class="fas fa-file-excel"></i>
+
+                <div class="type-details">
+
+                    <h4>Excel Files</h4>
+
+                    <div class="type-progress">
+
+                        <span style="width:45%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="type-row">
+
+                <i class="fas fa-image"></i>
+
+                <div class="type-details">
+
+                    <h4>Images</h4>
+
+                    <div class="type-progress">
+
+                        <span style="width:30%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--====================================
+        RECENT UPLOADS
+=====================================-->
+
+<div class="recent-uploads">
+
+    <div class="section-title">
+
+        <h2>Recent Uploads</h2>
+
+        <a href="#">View All</a>
+
+    </div>
+
+    <div class="upload-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>File</th>
+                    <th>Owner</th>
+                    <th>Size</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+
+                        <div class="file-info">
+
+                            <div class="file-icon pdf">
+
+                                <i class="fas fa-file-pdf"></i>
+
+                            </div>
+
+                            <div class="file-details">
+
+                                <h4>Project_Report.pdf</h4>
+
+                                <small>Confidential Report</small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Akash</td>
+
+                    <td>2.4 MB</td>
+
+                    <td>
+
+                        <span class="status uploaded">
+
+                            Uploaded
+
+                        </span>
+
+                    </td>
+
+                    <td>Today</td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="view-btn">
+
+                                <i class="fas fa-eye"></i>
+
+                            </button>
+
+                            <button class="download-btn">
+
+                                <i class="fas fa-download"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fas fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <div class="file-info">
+
+                            <div class="file-icon word">
+
+                                <i class="fas fa-file-word"></i>
+
+                            </div>
+
+                            <div class="file-details">
+
+                                <h4>Employee_List.docx</h4>
+
+                                <small>HR Department</small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Rahul</td>
+
+                    <td>950 KB</td>
+
+                    <td>
+
+                        <span class="status pending">
+
+                            Pending
+
+                        </span>
+
+                    </td>
+
+                    <td>Yesterday</td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="view-btn">
+
+                                <i class="fas fa-eye"></i>
+
+                            </button>
+
+                            <button class="download-btn">
+
+                                <i class="fas fa-download"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fas fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <div class="file-info">
+
+                            <div class="file-icon excel">
+
+                                <i class="fas fa-file-excel"></i>
+
+                            </div>
+
+                            <div class="file-details">
+
+                                <h4>Accounts.xlsx</h4>
+
+                                <small>Finance</small>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>Manager</td>
+
+                    <td>1.8 MB</td>
+
+                    <td>
+
+                        <span class="status approved">
+
+                            Approved
+
+                        </span>
+
+                    </td>
+
+                    <td>28 Jul</td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="view-btn">
+
+                                <i class="fas fa-eye"></i>
+
+                            </button>
+
+                            <button class="download-btn">
+
+                                <i class="fas fa-download"></i>
+
+                            </button>
+
+                            <button class="delete-btn">
+
+                                <i class="fas fa-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<!-- ================= RECENT ACTIVITY ================= -->
+
+<section class="activity-card">
+
+    <h2>Recent Upload Activity</h2>
+
+    <ul class="activity-list">
+
+        <li>
+
+            <i class="fa-solid fa-upload"></i>
+
+            <div class="activity-content">
+
+                <h4>Project_Report.pdf Uploaded</h4>
+
+                <p>
+                    File encrypted successfully and submitted
+                    for CEO approval.
+                </p>
+
+                <small>5 Minutes Ago</small>
+
+            </div>
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <div class="activity-content">
+
+                <h4>Budget.xlsx Approved</h4>
+
+                <p>
+                    Branch Manager approved the uploaded file.
+                </p>
+
+                <small>Today • 10:45 AM</small>
+
+            </div>
+
+        </li>
+
+        <li>
+
+            <i class="fa-solid fa-download"></i>
+
+            <div class="activity-content">
+
+                <h4>Invoice.pdf Downloaded</h4>
+
+                <p>
+                    Downloaded after successful approval.
+                </p>
+
+                <small>Yesterday</small>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+</section>
+
+<!-- ================= FILE OWNER ================= -->
+
+<section class="owner-card">
+
+    <img src="images/profile.png" alt="Owner">
+
+    <div class="owner-details">
+
+        <h3>Akash</h3>
+
+        <p>Administrator</p>
+
+        <small>
+            Uploads are encrypted using AES-256 before being
+            stored in the Secure Vault.
+        </small>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Secure Approval Vault. All Rights Reserved.
+
+</p>
+
+<span>
+
+Version 1.0
+
+</span>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="upload.js"></script>
+
+</body>
+
+</html>

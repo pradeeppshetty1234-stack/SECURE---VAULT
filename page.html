@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-
+scale=1.0">
+ <title>PPR Piping</title>
+ <style>
+ :root{--b:#2874f0;--y:#ff9f00;--g:#878787}*{margin:0;padding:0;box-sizing:border-
+box;font-family:sans-serif}
+ header{height:50px;padding:0 20px;display:flex;align-items:center;justify-
+content:space-between;border-bottom:1px solid #ddd}
+ .page{height:calc(100vh - 50px);display:flex;align-items:center;justify-
+content:center;background:#f4f7fb}
+ .card{width:min(900px,95%);display:grid;grid-template-columns:1fr 
+1fr;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 5px 15px 
+rgba(0,0,0,.1)}
+ .left{padding:30px;text-align:center;border-right:1px solid #eee}@media(max-
+width:700px){.left{display:none}.card{grid-template-columns:1fr}}
+ .right{padding:30px}.tabs{display:flex;margin-bottom:20px;border-bottom:1px solid 
+#eee}
+ .tab,.rc{flex:1;padding:10px;cursor:pointer;text-align:center;font-weight:700;color:var(-
+-g)}
+ .on{color:var(--b);border-bottom:3px solid var(--b)}.rc{border:1px solid #ddd;border-
+radius:5px;margin-bottom:10px}
+ .rc.on{border-color:var(--b);background:#e8f0fe;border-bottom:1px solid var(--b)}.iw{height:45px;border:1px solid #ddd;border-radius:5px;margin:10px 0;padding:0 
+10px;display:flex;align-items:center}
+ .iw 
+input{border:0;outline:0;width:100%}.btn{width:100%;height:45px;background:var(--
+b);color:#fff;border:0;border-radius:5px;font-weight:700;cursor:pointer}
+ </style>
+</head>
+<body>
+ <header><b>PPR<span>Piping</span></b><small>v2026</small></header>
+ <div class="page"><div class="card">
+ <div class="left"><h2>PPR System</h2><img src="/static/PPR-Fittings.jpg.jpeg" 
+width="100%"></div>
+ <div class="right">
+ <div class="tabs"><div class="tab on" onclick="tg(this,'panel','L')">Login</div><div 
+class="tab" onclick="tg(this,'panel','R')">Reg</div></div>
+ <div id="L" class="panel on">
+ <div class="rc on" onclick="tg(this,'rc')">Admin</div>
+ <div class="iw"><input id="u" placeholder="User"></div>
+ <div class="iw"><input type="password" id="p" placeholder="Pass"></div>
+ <button class="btn" onclick="lg()">Login</button>
+ </div>
+ <div id="R" class="panel"><div class="iw"><input 
+placeholder="Name"></div><button class="btn">Request</button></div>
+ </div>
+ </div></div>
+ <script>const tg=(el,cls,id)=>{
+ document.querySelectorAll('.'+cls).forEach(e=>e.classList.remove('on'));
+ 
+if(id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.getEl
+ementById(id).classList.add('on')}
+ el.classList.add('on');
+ }, lg=async()=>{
+ const r=await 
+fetch('/api/login',{method:'POST',body:JSON.stringify({u:u.value,p:p.value}),headers:{'Content-Type':'application/json'}}), d=await r.json();
+ d.ok?location.href=d.dashboard:alert(d.msg);
+ };
+ </script>
+</body>
+</html>
